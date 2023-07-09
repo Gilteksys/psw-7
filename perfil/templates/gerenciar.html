@@ -14,9 +14,9 @@
     <div class="row">
 
         {% if messages %}
-        {% for message in messages %}
-        <div class="alert {{ message.tags }}">{{ message }}</div>
-        {% endfor %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
         {% endif %}
 
         <div class="col-md-5">
@@ -75,8 +75,7 @@
     <div class="row">
         <div class="col-md-5">
             <span class="fonte-destaque">Nova categoria</span>
-            <form action="{% url 'cadastrar_categoria' %}" method="POST">{%
-                csrf_token %}
+            <form action="{% url 'cadastrar_categoria' %}" method="POST">{% csrf_token %}
 
                 <label>Categoria</label>
                 <input type="text" name="categoria" class="form-control">
